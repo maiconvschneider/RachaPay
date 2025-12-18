@@ -1,0 +1,172 @@
+.app {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.botoes-acoes {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.botoes-navegacao {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-jogos-passados,
+.btn-jogos-futuros {
+  flex: 1;
+  padding: 0.875rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-jogos-passados:hover,
+.btn-jogos-futuros:hover {
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+  border-color: var(--accent-blue);
+}
+
+.btn-jogos-passados:active,
+.btn-jogos-futuros:active {
+  transform: translateY(0);
+}
+
+.btn-novo-jogo {
+  flex: 1;
+  padding: 1rem;
+  background: var(--accent-blue);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-novo-jogo:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+}
+
+.btn-novo-jogo:active {
+  transform: translateY(0);
+}
+
+.btn-debitos {
+  flex: 1;
+  padding: 1rem;
+  background: var(--accent-red);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.btn-debitos:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+.btn-debitos:active {
+  transform: translateY(0);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.jogos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+
+.empty-state p {
+  margin-bottom: 0.5rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .botoes-acoes,
+  .botoes-navegacao {
+    flex-direction: column;
+  }
+  
+  .btn-novo-jogo,
+  .btn-debitos,
+  .btn-jogos-passados,
+  .btn-jogos-futuros {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .main {
+    padding: 2rem;
+  }
+}
+

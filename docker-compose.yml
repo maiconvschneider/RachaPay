@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rachapay-backend
+    ports:
+      - "5051:5051"
+    volumes:
+      - ./backend/data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=5051
+      - DB_PATH=/app/data/rachapay.db
+    restart: unless-stopped
+    networks:
+      - rachapay-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: rachapay-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - rachapay-network
+
+networks:
+  rachapay-network:
+    driver: bridge
+

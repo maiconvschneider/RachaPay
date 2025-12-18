@@ -1,0 +1,253 @@
+.debitos-container {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.debitos-header {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.btn-voltar {
+  background: transparent;
+  color: var(--accent-blue);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-voltar:hover {
+  color: #1976d2;
+}
+
+.debitos-header h1 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.debitos-main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.empty-debitos {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-secondary);
+}
+
+.empty-debitos p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.debitos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.debito-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.debito-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+  border-color: var(--accent-red);
+}
+
+.debito-card:active {
+  transform: translateY(0);
+}
+
+.debito-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.jogador-nome-debito {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.badge-jogos {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.debito-card-body {
+  margin-bottom: 1rem;
+}
+
+.valor-devendo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-valor {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.valor-total-devendo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
+.debito-card-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.tap-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Estilos para detalhes do jogador */
+.resumo-jogador-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.resumo-item-grande {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.resumo-label-grande {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resumo-value-grande {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
+.jogos-devendo-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.section-title-jogos {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.empty-jogos {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+.jogos-devendo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.jogo-devendo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.jogo-devendo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.jogo-devendo-data {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.jogo-devendo-valor {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.btn-abrir-jogo {
+  padding: 0.625rem 1rem;
+  background: var(--accent-blue);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.btn-abrir-jogo:hover {
+  background: #1976d2;
+}
+
+@media (min-width: 768px) {
+  .debitos-main {
+    padding: 2rem;
+  }
+
+  .resumo-jogador-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
