@@ -6,11 +6,13 @@ import NovoJogoModal from './components/NovoJogoModal'
 import DetalhesJogo from './components/DetalhesJogo'
 import DebitosPorJogador from './components/DebitosPorJogador'
 import ListaJogos from './components/ListaJogos'
+import Login from './components/Login'
 import { estaNaSemanaAtual } from './utils/dateUtils'
 
 const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 function App() {
+  const [autenticado, setAutenticado] = useState(false)
   const [jogos, setJogos] = useState([])
   const [loading, setLoading] = useState(true)
   const [showNovoJogo, setShowNovoJogo] = useState(false)
@@ -19,8 +21,21 @@ function App() {
   const [showListaJogos, setShowListaJogos] = useState(null) // 'passados' ou 'futuros'
 
   useEffect(() => {
-    carregarJogos()
+    // Verificar se já está autenticado (salvo no localStorage)
+    const authStatus = localStorage.getItem('rachapay_autenticado')
+    if (authStatus === 'true') {
+      setAutenticado(true)
+      carregarJogos()
+    } else {
+      setLoading(false)
+    }
   }, [])
+
+  const handleLogin = () => {
+    localStorage.setItem('rachapay_autenticado', 'true')
+    setAutenticado(true)
+    carregarJogos()
+  }
 
   const carregarJogos = async () => {
     try {
@@ -88,6 +103,17 @@ function App() {
   // Filtrar jogos da semana atual
   const jogosSemanaAtual = jogos.filter(j => estaNaSemanaAtual(j.data))
     .sort((a, b) => a.data.localeCompare(b.data))
+
+  if (!autenticado) {
+    if (loading) {
+      return (
+        <div className="app">
+          <div className="loading">Carregando...</div>
+        </div>
+      )
+    }
+    return <Login onLogin={handleLogin} />
+  }
 
   if (loading) {
     return (
